@@ -1,0 +1,171 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    font-family: 'Arial', sans-serif;
+}
+
+.birthday-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    color: gold;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black, 0px 0px 5px black;
+}
+
+.birthday-sign {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Brush Script MT', cursive;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black, 0px 0px 5px black;
+}
+
+.click-note {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: gold;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black, 0px 0px 5px black;
+}
+
+.candle {
+    width: 60px;
+    height: 200px;
+    background-color: #ff0000;
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gold;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 10px;
+}
+
+.candle::before {
+    content: '';
+    width: 20px;
+    height: 40px;
+    background-color: yellow;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    box-shadow: 0 0 20px yellow;
+}
+
+.candle::after {
+    content: '';
+    width: 10px;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+
+.flame {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 0;
+    left: 0;
+    background-color: #ff0000; /* Pure red */
+    border-radius: 50%;
+    animation: flicker 1s infinite alternate;
+}
+
+.message-box {
+    width: 80%;
+    max-width: 600px; /* Adjust max-width as needed */
+    background-color: black;
+    border: 2px solid gold;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.message {
+    font-size: 20px;
+    color: gold;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black, 0px 0px 5px black;
+}
+
+.petals {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.petal {
+    position: absolute;
+    width: 20px;
+    height: 40px;
+    background-color: #ff0000; 
+    border-radius: 50% 50% 75% 0; 
+    transform: rotate(-45deg); 
+    animation: fall 5s infinite;
+    opacity: 0.7;
+}
+
+.petal:nth-child(1) { left: 10%; animation-delay: 0s; }
+.petal:nth-child(2) { left: 20%; animation-delay: 1s; }
+.petal:nth-child(3) { left: 30%; animation-delay: 2s; }
+.petal:nth-child(4) { left: 40%; animation-delay: 3s; }
+.petal:nth-child(5) { left: 50%; animation-delay: 4s; }
+.petal:nth-child(6) { left: 60%; animation-delay: 5s; }
+.petal:nth-child(7) { left: 70%; animation-delay: 6s; }
+.petal:nth-child(8) { left: 80%; animation-delay: 7s; }
+.petal:nth-child(9) { left: 90%; animation-delay: 8s; }
+.petal:nth-child(10) { left: 100%; animation-delay: 9s; }
+
+@keyframes fall {
+    0% {
+        top: -10%;
+        opacity: 0;
+        transform: scale(0.5); /* Start with smaller size */
+    }
+    10% {
+        opacity: 0.7;
+        transform: scale(1); /* Normal size */
+    }
+    100% {
+        top: 110%;
+        opacity: 0;
+        transform: scale(0.5); /* End with smaller size */
+    }
+}
+
+/* Random size adjustments */
+.petal:nth-child(1) { width: 15px; height: 30px; }
+.petal:nth-child(2) { width: 25px; height: 50px; }
+.petal:nth-child(3) { width: 20px; height: 40px; }
+.petal:nth-child(4) { width: 18px; height: 36px; }
+.petal:nth-child(5) { width: 22px; height: 44px; }
+.petal:nth-child(6) { width: 17px; height: 34px; }
+.petal:nth-child(7) { width: 23px; height: 46px; }
+.petal:nth-child(8) { width: 19px; height: 38px; }
+.petal:nth-child(9) { width: 21px; height: 42px; }
+.petal:nth-child(10) { width: 16px; height: 32px; }
